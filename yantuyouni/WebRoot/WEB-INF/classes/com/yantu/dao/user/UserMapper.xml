@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yantu.dao.user.UserMapper">
+	<!-- 用户注册 -->
+	<insert id="registerUser" parameterType="user">
+		INSERT INTO ytyn_user
+		(userId,userName,userSex,userPhone,userOccupAtion,userPassword,userUickName,userType,birthday,email,emailPassword,userAddress,bankNo,bankType,lastUpdateTime,lastLoginTime,createTime,pictureHead)
+		VALUES
+		(#{userId},#{userName},#{userSex},#{userPhone},#{userOccupAtion},#{userPassword},#{userUickName},#{userType},#{birthday},#{email},#{emailPassword},#{userAddress},#{bankNo},#{bankType},#{lastUpdateTime},#{lastLoginTime},#{createTime},#{pictureHead})
+	</insert>
+	<!-- getLoginUser -->
+	<select id="getLoginUser" resultType="user" parameterType="user">
+		SELECT * From ytyn_user
+		<if test="userPhone!=null &amp;  userPhone!=''">
+			WHERE userPhone=#{userPhone} AND
+			userPassword=#{userPassword}
+		</if>
+		<if test="email !=null &amp;  email !=''">
+			WHERE email= #{email} AND emailPassword=#{emailPassword}
+		</if>
+	</select>
+
+	<!-- userIsExit -->
+	<select id="userIsExit" resultType="int" parameterType="user">
+		SELECT count(1) FROM ytyn_user
+		<trim prefix="where" prefixOverrides="and | or">
+			<if test="userPhone !=null  &amp;  userPhone!=''">
+				and userPhone = #{userPhone}
+			</if>
+			<if test="email !=null  &amp;  email !=''">
+				and email = #{email}
+			</if>
+		</trim>
+	</select>
+
+	<!-- modifyUser -->
+	<update id="modifyUser" parameterType="user">
+		UPDATE ytyn_user
+		<set>
+			<if test="userName != null"> userName = #{userName},</if>
+			<if test="userSex != null"> userSex = #{userSex},</if>
+			<if test="password != null"> password = #{password},</if>
+			<if test="emailPassword != null"> emailPassword = #{emailPassword},</if>
+			<if test="userUickName != null"> userUickName = #{userUickName},</if>
+			<if test="userOccupAtion != null"> userOccupAtion = #{userOccupAtion},</if>
+			<if test="userAddress != null"> userAddress = #{userAddress},</if>
+			<if test="bankNo != null"> bankNo = #{bankNo},</if>
+			<if test="bankType != null"> bankType = #{bankType}</if>
+			<if test="pictureHead != null"> pictureHead = #{pictureHead}</if>
+		</set>
+		where userId= #{userId}
+	</update>
+
+
+
+</mapper>
