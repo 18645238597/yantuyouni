@@ -1,4 +1,4 @@
-package common;
+package com.yantu.common;
 
 public class Constans {
 	//当前登录用户session key

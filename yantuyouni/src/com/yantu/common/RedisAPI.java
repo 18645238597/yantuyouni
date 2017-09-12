@@ -1,4 +1,4 @@
-package common;
+package com.yantu.common;
 /*package org.slsale.common;
 
 import redis.clients.jedis.Jedis;

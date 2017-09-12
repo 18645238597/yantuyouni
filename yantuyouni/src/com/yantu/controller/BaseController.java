@@ -10,8 +10,9 @@ import javax.servlet.http.HttpSession;
 import javax.xml.crypto.Data;
 
 import org.apache.log4j.Logger;
+
+import com.yantu.common.Constans;
 import com.yantu.pojo.User;
-import common.Constans;
 
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
