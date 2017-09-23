@@ -54,7 +54,6 @@
 
 	<!-- The fav icon -->
 	<link rel="shortcut icon" href="statics/img/favicon.ico">
-		
 </head>
 
 <body>
@@ -73,7 +72,8 @@
 					<div class="alert alert-info">
 						请输入登录账号和密码
 					</div>
-					<div class="form-horizontal">
+						<form action="user/login" method="get">
+						<div class="form-horizontal">
 						<fieldset>
 							<div class="input-prepend" title="登录账号" data-rel="tooltip">
 								<span class="add-on"><i class="icon-user"></i></span>
@@ -97,6 +97,7 @@
 							</p>
 						</fieldset>
 					</div>
+						</form>
 						
 				</div><!--/span-->
 			</div><!--/row-->

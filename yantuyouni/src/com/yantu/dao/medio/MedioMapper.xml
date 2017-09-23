@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yantu.dao.medio.MedioMapper">
+	<!-- 保存文件(只保存文件的路径) -->
+	<insert id="saveMedio" parameterType="Medio">
+		INSERT INTO ytyn_medio
+		(userId,videoUrl,cutPicUrl,imageUrl,createDate)
+		values (#{userId},#{videoUrl},#{cutPicUrl},#{imageUrl},#{createDate})
+	</insert>
+	
+	<!-- 根据id查询 视频 或者图片 -->
+	<select id="selectMedioById" resultType="Medio" parameterType="Medio">
+		SELECT * From ytyn_user_file WHERE id=#{id}
+	</select>
+
+
+
+</mapper>

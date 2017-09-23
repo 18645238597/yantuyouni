@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO ytyn_user
 		(userId,userName,userSex,userPhone,userOccupAtion,userPassword,userUickName,userType,birthday,email,emailPassword,userAddress,bankNo,bankType,lastUpdateTime,lastLoginTime,createTime,pictureHead)
 		VALUES
-		(#{userId},#{userName},#{userSex},#{userPhone},#{userOccupAtion},#{userPassword},#{userUickName},#{userType},#{birthday},#{email},#{emailPassword},#{userAddress},#{bankNo},#{bankType},#{lastUpdateTime},#{lastLoginTime},#{createTime},#{pictureHead})
+		(ytyn_user_sequence.nextval,#{userName},#{userSex},#{userPhone},#{userOccupAtion},#{userPassword},#{userUickName},#{userType},#{birthday},#{email},#{emailPassword},#{userAddress},#{bankNo},#{bankType},#{lastUpdateTime},#{lastLoginTime},#{createTime},#{pictureHead})
 	</insert>
 	<!-- getLoginUser -->
 	<select id="getLoginUser" resultType="user" parameterType="user">

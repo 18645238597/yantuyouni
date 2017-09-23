@@ -7,6 +7,6 @@
 	</settings>
 	<typeAliases>
 	<!-- 给实体类区别名  -->
-		<package name="com.yantu.entity"/>
+		<package name="com.yantu.pojo"/>
 	</typeAliases>
 </configuration>
